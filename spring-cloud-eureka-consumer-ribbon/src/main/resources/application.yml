@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-application-client
+
+server:
+  port: 8092
+  tomcat:
+    max-threads: 3
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

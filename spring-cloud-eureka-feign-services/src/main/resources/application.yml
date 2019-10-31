@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-feign-service
+
+server:
+  port: 8070
+  tomcat:
+    max-threads: 3
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.202.137:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
